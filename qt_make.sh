@@ -9,7 +9,10 @@
 #QMAKE=/opt/Qt/5.15.0/gcc_64/bin/qmake
 QMAKE=qmake
 
-${QMAKE} -project
-echo 'QT += widgets' >> *.pro
+PROJECT_FILE="qt_image_viewer.pro"
+
+${QMAKE} -project -o ${PROJECT_FILE}
+echo 'QT += widgets' >> ${PROJECT_FILE}
 ${QMAKE}
+make -j8
 

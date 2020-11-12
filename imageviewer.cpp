@@ -300,11 +300,11 @@ void ImageViewer::updateActions()
 
 void ImageViewer::scaleImage(double factor)
 {
-	//Q_ASSERT(imageLabel->pixmap());
-	Q_ASSERT(! (imageLabel->pixmap(Qt::ReturnByValue).isNull()));
+	Q_ASSERT(imageLabel->pixmap());
+	//Q_ASSERT(! (imageLabel->pixmap(Qt::ReturnByValue).isNull()));
 	scaleFactor *= factor;
-	//imageLabel->resize(scaleFactor * imageLabel->pixmap()->size());
-	imageLabel->resize(scaleFactor * imageLabel->pixmap(Qt::ReturnByValue).size());
+	imageLabel->resize(scaleFactor * imageLabel->pixmap()->size());
+	//imageLabel->resize(scaleFactor * imageLabel->pixmap(Qt::ReturnByValue).size());
 
 	adjustScrollBar(scrollArea->horizontalScrollBar(), factor);
 	adjustScrollBar(scrollArea->verticalScrollBar(), factor);
