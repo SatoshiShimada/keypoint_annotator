@@ -115,6 +115,7 @@ void ImageViewer::setImage(const QImage &newImage)
 
 	keypoints.clear();
 	textArea->setPlainText(QString(""));
+	updateVisualize();
 }
 
 bool ImageViewer::saveFile(const QString &fileName)
